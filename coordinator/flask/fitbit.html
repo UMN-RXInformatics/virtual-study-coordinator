@@ -1,0 +1,167 @@
+<div id="fitbit">
+  <h1>Welcome!</h1>
+  <p id="fitbit-warning" class="text-danger">
+    <b>
+      Please authenticate with fitbit to continue.
+    </b>
+  </p>
+
+  <p id="explanation" class="lead">
+    In order for you to participate in this study we need to confirm that
+    we can access your heart rate and activity data from FitBit. If you
+    choose the "<span class="text-primary">Continue</span>" button
+    below, we will attempt to obtain your heart rate and activity data
+    for the past 24 hours. These data will be used for verification of
+    eligibility and will not be retained in the study database. You
+    may also choose "<span class="text-danger">Decline</span>" to indicate that you are
+    not willing to participate further. In this case, we will not attempt
+    to obtain your FitBit data.
+  </p>
+
+  <form id="fitbitform" class="form" method="post" role="form" onsubmit="return checkState();">
+    <button id="submitButton" class="btn btn-primary btn-lg btn-block" type="submit" disabled>Continue</button>
+    <button class="btn btn-danger btn-lg btn-block" type="button" data-toggle="modal" data-target="#confirmModal">Decline</button>
+  </form>
+</div>
+
+<div id="confirmModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h3 class="modal-title">Are you sure?</h3>
+      </div>
+      <div class="modal-body">
+        <p class="lead">Please confirm that you are not willing to participate further.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Back</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" onclick="return cancel();">I would not like to participate.</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<script>
+ var fitbitAccessToken;
+ var fragmentQueryParameters = {};
+ var urls = [];
+ var dataSubmission = [];
+
+ if (window.location.hash) {
+
+     var today = moment();
+     var yesterday = moment().subtract(1, 'day');
+
+     window.location.hash.slice(1).replace(
+         new RegExp("([^?=&]+)(=([^&]*))?", "g"),
+         function($0, $1, $2, $3) { fragmentQueryParameters[$1] = $3; }
+     );
+
+     fitbitAccessToken = fragmentQueryParameters.access_token;
+
+     if(fragmentQueryParameters.state.split('+')[1] == 'eligibility') {
+	 urls.push('https://api.fitbit.com/1/user/-/activities/heart/date/'+ yesterday.format('YYYY-MM-DD') +'/1d/1sec.json');
+	 urls.push('https://api.fitbit.com/1/user/-/activities/steps/date/'+ yesterday.format('YYYY-MM-DD') +'/1d/1min.json');
+	 urls.push('https://api.fitbit.com/1/user/-/activities/elevation/date/'+ yesterday.format('YYYY-MM-DD') +'/1d/1min.json');
+     } else {
+
+	 var startDate = moment().subtract(7, 'day');
+	 if(fragmentQueryParameters.state.split('+').length > 2){
+	     startDate = moment(fragmentQueryParameters.state.split('+')[2], 'MM-DD-YYYY')
+	 };
+	 var endDate = moment(startDate).add(7, 'day');
+	 for(let i = startDate; i <= endDate; i.add(1, 'day')){
+	     urls.push('https://api.fitbit.com/1/user/-/activities/heart/date/'+ i.format('YYYY-MM-DD') +'/1d/1sec.json');
+	     urls.push('https://api.fitbit.com/1/user/-/activities/steps/date/'+ i.format('YYYY-MM-DD') +'/1d/1min.json');
+	     urls.push('https://api.fitbit.com/1/user/-/activities/elevation/date/'+ i.format('YYYY-MM-DD') +'/1d/1min.json');
+	 }
+	 $('#explanation').html(
+	     'In order to complete the study we must collect your heart rate and activity data from FitBit. If you choose the "<span class="text-primary">Continue</span>" button below, we will attempt to obtain your heart rate and activity data for the last week. You may also choose "<span class="text-danger">Decline</span>" to indicate that you are not willing to participate further. In this case, we will not attempt to obtain your FitBit data.'
+	 );
+     }
+
+     Promise.all(urls.map(url =>
+	 fetch(
+	     url,
+	     {
+		 headers: new Headers({
+		     'Authorization': 'Bearer ' + fitbitAccessToken
+		 }),
+		 mode: 'cors',
+		 method: 'GET'
+	     }
+	 ).then(processResponse)
+     )).then(populateForm).catch(function(error) {
+	 console.log(error);
+     });
+ };
+
+ if(!fitbitAccessToken){
+     if(window.location.search){
+	 window.location.search.slice(1).replace(
+	     new RegExp("([^?=&]+)(=([^&]*))?", "g"),
+	     function($0, $1, $2, $3) { fragmentQueryParameters[$1] = $3; }
+	 );
+     }
+
+     if(fragmentQueryParameters.event != 'eligibility') {
+	 $('#explanation').html(
+	     'In order to complete the study we must collect your heart rate and activity data from FitBit. If you choose the "<span class="text-primary">Continue</span>" button below, we will attempt to obtain your heart rate and activity data for the last week. You may also choose "<span class="text-danger">Decline</span>" to indicate that you are not willing to participate further. In this case, we will not attempt to obtain your FitBit data.'
+	 );
+     }
+
+     if('start' in fragmentQueryParameters){
+	 window.location.replace('https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=2287XS&scope=activity%20heartrate&state=' + fragmentQueryParameters.key + '+' + fragmentQueryParameters.event + '+' + fragmentQueryParameters.start);
+     } else {
+	 window.location.replace('https://www.fitbit.com/oauth2/authorize?response_type=token&client_id=2287XS&scope=activity%20heartrate&state=' + fragmentQueryParameters.key + '+' + fragmentQueryParameters.event);
+     }
+
+ }
+
+
+ function processResponse(res) {
+     console.log(res);
+     if (!res.ok) {
+	 throw new Error('Fitbit API request failed: ' + res);
+     }
+
+     var contentType = res.headers.get('content-type')
+     if (contentType && contentType.indexOf("application/json") !== -1) {
+	 $('#fitbit-warning').remove();
+	 return res.json();
+     } else {
+	 throw new Error('JSON expected but received ' + contentType);
+     }
+ }
+
+ function populateForm(res){
+     let hr = $("<input>").attr({"type":"hidden","name":"hr"}).val(JSON.stringify(res));
+     $('#fitbitform').append(hr);
+     let record = $("<input>").attr({"type":"hidden","name":"record"}).val(fragmentQueryParameters.state.split('+')[0]);
+     $('#fitbitform').append(record);
+     let event = $("<input>").attr({"type":"hidden","name":"event"}).val(fragmentQueryParameters.state.split('+')[1]);
+     $('#fitbitform').append(event);
+     $('#submitButton').prop("disabled", false);
+ }
+
+ function checkState(){
+     if(fitbitAccessToken){
+	 return true
+     } else {
+	 return false
+     }
+ }
+
+ function cancel(){
+     $('#fitbit').html(
+	 '<p class="lead"> You have chosen not to participate in this study. You may close this tab at any time.</p>'
+     );
+     return true;
+ }
+
+</script>
