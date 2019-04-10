@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ODM xmlns="http://www.cdisc.org/ns/odm/v1.3" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:redcap="https://projectredcap.org" xsi:schemaLocation="http://www.cdisc.org/ns/odm/v1.3 schema/odm/ODM1-3-1.xsd" ODMVersion="1.3.1" FileOID="000-00-0000" FileType="Snapshot" Description="EMA Stress Pilot Survey" AsOfDateTime="2019-04-10T13:08:47" CreationDateTime="2019-04-10T13:08:47" SourceSystem="REDCap" SourceSystemVersion="8.5.28">
+<Study OID="Project.EMAStressPilotSurvey">
+<GlobalVariables>
+	<StudyName>EMA Stress Pilot Survey</StudyName>
+	<StudyDescription>This file contains the metadata, events, and data for REDCap project "EMA Stress Pilot Survey".</StudyDescription>
+	<ProtocolName>EMA Stress Pilot Survey</ProtocolName>
+	<redcap:RecordAutonumberingEnabled>1</redcap:RecordAutonumberingEnabled>
+	<redcap:CustomRecordLabel></redcap:CustomRecordLabel>
+	<redcap:SecondaryUniqueField></redcap:SecondaryUniqueField>
+	<redcap:SchedulingEnabled>0</redcap:SchedulingEnabled>
+	<redcap:Purpose>2</redcap:Purpose>
+	<redcap:PurposeOther>4</redcap:PurposeOther>
+	<redcap:ProjectNotes></redcap:ProjectNotes>
+</GlobalVariables>
+<MetaDataVersion OID="Metadata.EMAStressPilotSurvey_2019-04-10_1308" Name="EMA Stress Pilot Survey" redcap:RecordIdField="record_id">
+	<FormDef OID="Form.survey" Name="Survey" Repeating="No" redcap:FormName="survey">
+		<ItemGroupRef ItemGroupOID="survey.record_id" Mandatory="No"/>
+		<ItemGroupRef ItemGroupOID="survey.survey_complete" Mandatory="No"/>
+	</FormDef>
+	<ItemGroupDef OID="survey.record_id" Name="Survey" Repeating="No">
+		<ItemRef ItemOID="record_id" Mandatory="No" redcap:Variable="record_id"/>
+		<ItemRef ItemOID="phone_number" Mandatory="No" redcap:Variable="phone_number"/>
+		<ItemRef ItemOID="stress_happened" Mandatory="Yes" redcap:Variable="stress_happened"/>
+		<ItemRef ItemOID="stress_number" Mandatory="Yes" redcap:Variable="stress_number"/>
+		<ItemRef ItemOID="stress_magnitude" Mandatory="Yes" redcap:Variable="stress_magnitude"/>
+		<ItemRef ItemOID="stress_type" Mandatory="Yes" redcap:Variable="stress_type"/>
+		<ItemRef ItemOID="stress_time" Mandatory="Yes" redcap:Variable="stress_time"/>
+		<ItemRef ItemOID="invitation_timestamp" Mandatory="No" redcap:Variable="invitation_timestamp"/>
+	</ItemGroupDef>
+	<ItemGroupDef OID="survey.survey_complete" Name="Form Status" Repeating="No">
+		<ItemRef ItemOID="survey_complete" Mandatory="No" redcap:Variable="survey_complete"/>
+	</ItemGroupDef>
+	<ItemDef OID="record_id" Name="record_id" DataType="text" Length="999" redcap:Variable="record_id" redcap:FieldType="text">
+		<Question><TranslatedText>Record ID</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="phone_number" Name="phone_number" DataType="text" Length="999" redcap:Variable="phone_number" redcap:FieldType="text" redcap:TextValidationType="phone" redcap:FieldAnnotation="@HIDDEN-SURVEY">
+		<Question><TranslatedText>Phone Number</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="stress_happened" Name="stress_happened" DataType="boolean" Length="1" redcap:Variable="stress_happened" redcap:FieldType="yesno" redcap:RequiredField="y">
+		<Question><TranslatedText>Has anything stressful happened since the last time you responded to this survey?</TranslatedText></Question>
+		<CodeListRef CodeListOID="stress_happened.choices"/>
+	</ItemDef>
+	<ItemDef OID="stress_number" Name="stress_number" DataType="text" Length="1" redcap:Variable="stress_number" redcap:FieldType="select" redcap:RequiredField="y" redcap:BranchingLogic="[stress_happened] = &#039;1&#039;">
+		<Question><TranslatedText>How many stressful events happened since the last survey?</TranslatedText></Question>
+		<CodeListRef CodeListOID="stress_number.choices"/>
+	</ItemDef>
+	<ItemDef OID="stress_magnitude" Name="stress_magnitude" DataType="integer" Length="999" redcap:Variable="stress_magnitude" redcap:FieldType="slider" redcap:RequiredField="y" redcap:BranchingLogic="[stress_happened] = &#039;1&#039;" redcap:CustomAlignment="RH">
+		<Question><TranslatedText>Rate the most stressful event that&#039;s happened since the last survey.</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="stress_type" Name="stress_type" DataType="text" Length="1" redcap:Variable="stress_type" redcap:FieldType="select" redcap:RequiredField="y" redcap:BranchingLogic="[stress_happened] = &#039;1&#039;" redcap:CustomAlignment="RH">
+		<Question><TranslatedText>What type of stressful event was it?</TranslatedText></Question>
+		<CodeListRef CodeListOID="stress_type.choices"/>
+	</ItemDef>
+	<ItemDef OID="stress_time" Name="stress_time" DataType="partialDatetime" Length="999" redcap:Variable="stress_time" redcap:FieldType="text" redcap:TextValidationType="datetime_mdy" redcap:RequiredField="y" redcap:BranchingLogic="[stress_happened] = &#039;1&#039;">
+		<Question><TranslatedText>Approximately, what time did the most stressful event occur?</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="invitation_timestamp" Name="invitation_timestamp" DataType="datetime" Length="999" redcap:Variable="invitation_timestamp" redcap:FieldType="text" redcap:TextValidationType="datetime_seconds_ymd" redcap:FieldAnnotation="@HIDDEN">
+		<Question><TranslatedText>Invitation Timestamp</TranslatedText></Question>
+	</ItemDef>
+	<ItemDef OID="survey_complete" Name="survey_complete" DataType="text" Length="1" redcap:Variable="survey_complete" redcap:FieldType="select" redcap:SectionHeader="Form Status">
+		<Question><TranslatedText>Complete?</TranslatedText></Question>
+		<CodeListRef CodeListOID="survey_complete.choices"/>
+	</ItemDef>
+	<CodeList OID="stress_happened.choices" Name="stress_happened" DataType="boolean" redcap:Variable="stress_happened">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Yes</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>No</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="stress_number.choices" Name="stress_number" DataType="text" redcap:Variable="stress_number">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>1</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>2</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>3</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>4</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>5</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="6"><Decode><TranslatedText>&gt; 5</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="stress_type.choices" Name="stress_type" DataType="text" redcap:Variable="stress_type">
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Exam in my class</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Other work/school</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="3"><Decode><TranslatedText>Interpersonal</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="4"><Decode><TranslatedText>Financial</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="5"><Decode><TranslatedText>Health</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="6"><Decode><TranslatedText>Trauma</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="7"><Decode><TranslatedText>Other</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+	<CodeList OID="survey_complete.choices" Name="survey_complete" DataType="text" redcap:Variable="survey_complete">
+		<CodeListItem CodedValue="0"><Decode><TranslatedText>Incomplete</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="1"><Decode><TranslatedText>Unverified</TranslatedText></Decode></CodeListItem>
+		<CodeListItem CodedValue="2"><Decode><TranslatedText>Complete</TranslatedText></Decode></CodeListItem>
+	</CodeList>
+</MetaDataVersion>
+</Study>
+</ODM>
