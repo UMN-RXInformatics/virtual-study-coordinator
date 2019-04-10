@@ -1,0 +1,2 @@
+#!/bin/bash
+su -c "/home/salsa-server/salsa-server/scripts/schedule_fitbit_study.sh" salsa-server
