@@ -1,0 +1,9 @@
+"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+record_id,survey,,text,"Record ID",,,,,,,,,,,,,
+phone_number,survey,,text,"Phone Number",,,phone,,,,,,,,,,@HIDDEN-SURVEY
+stress_happened,survey,,yesno,"Has anything stressful happened since the last time you responded to this survey?",,,,,,,,y,,,,,
+stress_number,survey,,dropdown,"How many stressful events happened since the last survey?","1, 1 | 2, 2 | 3, 3 | 4, 4 | 5, 5 | 6, > 5",,,,,,"[stress_happened] = '1'",y,,,,,
+stress_magnitude,survey,,slider,"Rate the most stressful event that's happened since the last survey.","Not stressful at all | Extremely stressful",,,,,,"[stress_happened] = '1'",y,RH,,,,
+stress_type,survey,,dropdown,"What type of stressful event was it?","1, Exam in my class | 2, Other work/school | 3, Interpersonal | 4, Financial | 5, Health | 6, Trauma | 7, Other",,,,,,"[stress_happened] = '1'",y,RH,,,,
+stress_time,survey,,text,"Approximately, what time did the most stressful event occur?",,,datetime_mdy,,,,"[stress_happened] = '1'",y,,,,,
+invitation_timestamp,survey,,text,"Invitation Timestamp",,,datetime_seconds_ymd,,,,,,,,,,@HIDDEN

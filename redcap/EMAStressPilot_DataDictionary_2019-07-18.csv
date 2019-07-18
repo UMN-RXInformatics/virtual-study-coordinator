@@ -1,0 +1,133 @@
+﻿"Variable / Field Name","Form Name","Section Header","Field Type","Field Label","Choices, Calculations, OR Slider Labels","Field Note","Text Validation Type OR Show Slider Number","Text Validation Min","Text Validation Max",Identifier?,"Branching Logic (Show field only if...)","Required Field?","Custom Alignment","Question Number (surveys only)","Matrix Group Name","Matrix Ranking?","Field Annotation"
+record_id,consent,,text,"Record ID",,,,,,,,,,,,,
+consent_text,consent,,descriptive,"Title of Research Study: Feasibility of using wearable fitness tracker technology to measure stress reactivity
+
+Researchers: Serguei Pakhomov and Michael Kotlyar
+
+Supported By: This research is supported by University of Minnesota.
+
+Financial Interest Disclosure: 
+The investigators have no financial interests to disclose.
+
+Why am I being asked to take part in this research study?
+We are asking you to take part in this research study because you responded to an advertisement for this study indicating that you are a University of Minnesota student currently enrolled in classes and that you own and use a FitBit fitness tracker capable of measuring heart rate. 
+
+What should I know about a research study?
+● Whether or not you take part is up to you.
+● You can choose not to take part.
+● You can agree to take part and later change your mind.
+● Your decision will not be held against you.
+● You can ask all the questions you want before you decide.
+
+Who can I talk to?
+For questions about research appointments, the research study, research results, or other concerns, call the study team at: 
+
+
+Researcher Name: Serguei Pakhomov
+Phone Number: 612-624-1198
+Email Address: pakh0002@umn.edu
+ 
+
+This research has been reviewed and approved by an Institutional Review Board (IRB) within the Human Research Protections Program (HRPP). To share feedback privately with the HRPP about your research experience, call the Research Participants' Advocate Line at 612-625-1650 or go to www.irb.umn.edu/report.html. You are encouraged to contact the HRPP if: 
+
+
+● Your questions, concerns, or complaints are not being answered by the research team.
+● You cannot reach the research team.
+● You want to talk to someone besides the research team.
+● You have questions about your rights as a research participant.
+● You want to get information or provide input about this research.
+
+Why is this research being done?
+Exposure to frequent or severe stress is associated with negative health outcomes. The objective of the proposed pilot study is to obtain initial data determining if stress in every day life can be measured using commonly available fitness trackers such as the FitBit Charge.
+
+How long will the research last?
+We expect that you will be in this research study for approximately one week after you start tracking heart rate using FitBit.
+
+How many people will be studied?
+We expect about 20 people will be in this research study.
+
+What happens if I say ""Yes, I want to be in this research""?
+In order to determine if you qualify for this study, you will first be asked to answer a few questions via an on-line survey and to confirm that your FitBit heart rate and activity data are accessible. To determine this, we will collect heart rate and activity data for the previous 24 hours from your FitBit account. These data will be collected for qualification purposes only and will not be retained in the study. If you qualify, we will ask you to wear your fitness tracker during waking hours for a 1 week period and to allow FitBit to provide us with your heart rate measurements for that week.  Since we are investigating if a fitness tracker can be used to measure stress, we will ask you about your exam schedule since taking exams is likely to be stressful for most students.  The one week period that you will participate in this study will correspond to a week in which you have one of more exams.
+
+All of the assessments will take place on-line or over the phone.  During the tracking week, you will be asked to do several things:
+
+1) Wear your fitness tracker during waking hours
+
+2) Complete on-line surveys six times per day in which we will ask you about anything stressful that you have experienced.  You will be sent a text message with a link to the survey and each survey should take you less than 3 minutes to complete and can be done on any internet enabled device including a smart-phone. Surveys should be completed within 2 hours of them being sent to you. Standard text message and data charges may apply (depending on your cell phone plan).
+
+
+3) Call a phone number twice during the week in order to complete a math and a verbal task.  Since we are seeing if a FitBit can be used to measure stress, we will ask you to complete these two tasks that are generally considered to be somewhat stressful.  We will provide phone numbers for you to call which will be answered by an automated voice response system which will provide instructions for the tasks.
+
+4) Allow FitBit to provide us with your heart rate measurements for the one week period by using a web-based application. 
+
+
+What happens if I do not want to be in this research?
+You can leave the research at any time and it will not be held against you.
+
+What happens if I say ""Yes"", but I change my mind later?
+You can leave the research at any time and it will not be held against you.  Any data collected prior to withdrawal will be used in the study.  
+
+Is there any way being in this study could be bad for me?
+The risks to you from participating in this research are very low and are limited to potential for loss of confidentiality. The investigators and the staff will minimize this risk to confidentiality by following strict security and confidentiality protocols in handling your data. Only authorized study personnel will have access to study data.
+
+What happens to the information collected for the research?
+Efforts will be made to limit the use and disclosure of your personal information to people who have a need to review this information. We cannot promise complete secrecy. Organizations that may inspect and copy your information include the IRB and other representatives of this institution. 
+
+During this study we will ask you to provide your phone number and University of Minnesota email address in order to communicate with you regarding the study and in order for you to complete study procedures. This potentially identifying information will be permanently deleted 6 months after the study is completed, whereas the study data you have provided will continue to be analyzed and used for future research.
+
+The results of this study may also be used for teaching, publications, or for presentation at scientific meetings.  
+
+
+Will I have a chance to provide feedback after the study is over? 
+The Human Research Protection Program may ask you to complete a survey that asks about your experience as a research participant. You do not have to complete the survey if you do not want to. If you do choose to complete the survey, your responses will be anonymous.  
+
+If you are not asked to complete a survey, but you would like to share feedback, please contact the study team or the Human Research Protection Program (HRPP). See the ""Who Can I Talk To?"" section of this form for study team and HRPP contact information.
+
+Will I be compensated for my participation? 
+If you agree to take part in this research study, we will pay you $30 for your time and effort if you wear the FitBit for the entire 1-week study period, complete the automated math task and provide FitBit data to us after the 1-week study period via a web-based app. If you also respond to at least 80% of the brief daily automated surveys within 2 hours of them being sent to you, you will receive an additional $20. The maximum that you can receive for time and effort in this study is $50. The payment will be delivered in the form of an electronic Amazon gift card via email to the email address you provide at the end of this form.
+
+If you withdraw from the study before providing us with one week of FitBit data (either because you have not worn the FitBit for the week or did not log into FitBit at the end of the week to transfer the data) and before completion of the automated math task, you will receive NO PAYMENT for the study.
+
+
+Signature 
+Providing your University of Minnesota email address and smart-phone number documents your permission to take part in this research.
+
+",,,,,,,,,,,,,
+risk_answer,consent,,dropdown,"Which of the following is a potential risk of participating in this study? ","1, physical harm | 2, loss of confidentiality | 3, psychological harm","You will not be able to continue to the next step if  your response is incorrect.",,,,,,y,,,,,
+phone_number,consent,,text,"This study uses SMS text messaging to conduct surveys. Please provide a phone number at which you can receive text messages from this study. Standard text message and data charges may apply (depending on your cell phone plan).",,,phone,,,y,"[risk_answer] = '2'",y,,,,,
+consent_email,consent,,text,"By providing my University of Minnesota email address I consent to participate in this study.",,,email,,,y,"[risk_answer] = '2'",y,,,,,
+math_phone,consent,,text,"Twilio math task phone number",,,phone,,,y,,,,,,,@HIDDEN-SURVEY
+vfm_phone,consent,,text,"Twilio vfluency task phone number",,,phone,,,y,,,,,,,@HIDDEN-SURVEY
+umn_student,eligibility,,yesno,"Are you currently a University of Minnesota student enrolled in at least one course this semester?",,,,,,,,y,,,,,
+fitbit_model,eligibility,,dropdown,"Which Fitbit model do you own?","1, Fitbit Charge | 2, Fitbit Charge 2 | 3, Fitbit Ionic | 4, Fitbit Alta HR | 5, Fitbit Surge | 6, Other",,,,,,,y,,,,,
+has_smartphone,eligibility,,yesno,"Is your FitBit linked to your smartphone through the FitBit app? ",,,,,,,,y,,,,,
+age,eligibility,,text,"What is your age (years)?",,,integer,18,100,,,y,,,,,
+sex,eligibility,,dropdown,"What is your sex?","1, intersex | 2, female | 3, male",,,,,,,y,,,,,
+race,eligibility,,dropdown,"What is your race?","1, American Indian/Alaska Native | 2, Asian | 3, Native Hawaiian or Other Pacific Islander | 4, Black or African American | 5, White | 6, More Than One Race",,,,,,,y,,,,,
+ethnicity,eligibility,,dropdown,"What is your ethnicity?","1, Hispanic or Latino | 2, Not Hispanic or Latino",,,,,,,y,,,,,
+meds,eligibility,,text,"List any medications you are currently taking",,"use a comma to separate medications; enter NA if none",,,,,,y,,,,,
+med_change,eligibility,,dropdown,"Have there been any changes in your current medications (including changes in dosage) in the last 2 months?","1, Yes | 2, No | 3, Not Applicable",,,,,,,y,,,,,
+pregnant,eligibility,,yesno,"Are you currently pregnant or breastfeeding?",,,,,,,"[sex] = '1' and [sex] = '2'",y,,,,,
+disorders,eligibility,,text,"List any health conditions for which you are currently being treated",,"use a comma to separate conditions; enter NA if none",,,,,,y,,,,,
+tobacco,eligibility,,yesno,"Do you use tobacco products?",,,,,,,,y,,,,,
+tobacco_freq,eligibility,,dropdown,"How often do you use tobacco products?","1, Occasionally | 2, 1-2 times per week | 3, 3-4 times per week | 4, 5-6 times per week | 5, Every day",,,,,,"[tobacco] = '1'",y,,,,,
+has_exam,eligibility,,yesno,"Do you have an upcoming exam in one or more of the classes you are currently taking?",,,,,,,,y,,,,,
+exam_1,eligibility,"Please indicate the date and start time of each upcoming exam this semester. You can enter information on up to 8 exams. We will use this information in order to tell you when to start wearing the FitBit.",text,"First upcoming exam date and time:",,,datetime_mdy,,,,,,,,,,
+exam_stress_1,eligibility,,slider,"How stressful do you expect this exam to be for you?","Not at all | Extremely",,,,,,,,RH,,,,
+exam_2,eligibility," ",text,"Second upcoming exam date and time:",,,datetime_mdy,,,,,,,,,,
+exam_stress_2,eligibility,,slider,"How stressful do you expect this exam to be for you?","Not at all | Extremely",,,,,,,,RH,,,,
+exam_3,eligibility," ",text,"Third upcoming exam date and time:",,,datetime_mdy,,,,,,,,,,
+exam_stress_3,eligibility,,slider,"How stressful do you expect this exam to be for you?","Not at all | Extremely",,,,,,,,RH,,,,
+exam_4,eligibility," ",text,"Fourth upcoming exam date and time:",,,datetime_mdy,,,,,,,,,,
+exam_stress_4,eligibility,,slider,"How stressful do you expect this exam to be for you?","Not at all | Extremely",,,,,,,,RH,,,,
+exam_5,eligibility," ",text,"Fifth upcoming exam date and time:",,,datetime_mdy,,,,,,,,,,
+exam_stress_5,eligibility,,slider,"How stressful do you expect this exam to be for you?","Not at all | Extremely",,,,,,,,RH,,,,
+exam_6,eligibility," ",text,"Sixth upcoming exam date and time:",,,datetime_mdy,,,,,,,,,,
+exam_stress_6,eligibility,,slider,"How stressful do you expect this exam to be for you?","Not at all | Extremely",,,,,,,,RH,,,,
+exam_7,eligibility," ",text,"Seventh upcoming exam date and time:",,,datetime_mdy,,,,,,,,,,
+exam_stress_7,eligibility,,slider,"How stressful do you expect this exam to be for you?","Not at all | Extremely",,,,,,,,RH,,,,
+exam_8,eligibility," ",text,"Eighth upcoming exam date and time:",,,datetime_mdy,,,,,,,,,,
+exam_stress_8,eligibility,,slider,"How stressful do you expect this exam to be for you?","Not at all | Extremely",,,,,,,,RH,,,,
+is_eligible,eligibility,,truefalse,"Is Eligible?",,,,,,,,,,,,,@HIDDEN-SURVEY
+start_date,eligibility,,text,"EMA Start Date",,,date_ymd,,,,,,,,,,@HIDDEN-SURVEY
+submit_text,eligibility,,descriptive,"In order for you to participate in this study we need to confirm that we can access your heart rate and activity data from FitBit. When you click the ""Submit"" button below, you will be redirected to login to your FitBit account.",,,,,,,,,,,,,
