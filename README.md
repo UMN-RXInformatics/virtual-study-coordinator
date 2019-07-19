@@ -16,5 +16,5 @@ tasks (or recycled using Twilio API).
 
 - `analysis/` - scripts for interacting with the redcap API and for synthesizing results from fitbit JSON and redcap tables
 - `coordinator/` - scripts/web interfaces for scheduling EMAs and collecting fitbit data
-- `redcap/' - data dictionaries used to set up participant data including consent and EMA surveys
-- `twilio/' - Twilio Markup Language scripts for administering the math and verbal fluency tasks
+- `redcap/` - data dictionaries used to set up participant data including consent and EMA surveys
+- `twilio/` - Twilio Markup Language scripts for administering the math and verbal fluency tasks
